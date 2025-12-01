@@ -1,0 +1,32 @@
+{
+  "frontend": [
+    "React",
+    "Next.js",
+    "TypeScript",
+    "JavaScript",
+    "Tailwind CSS",
+    "HTML5",
+    "CSS3",
+    "Redux"
+  ],
+  "backend": [
+    "Node.js",
+    "Express",
+    "PostgreSQL",
+    "MongoDB",
+    "REST APIs",
+    "GraphQL",
+    "Python",
+    "Django"
+  ],
+  "tools": [
+    "Git",
+    "GitHub",
+    "VS Code",
+    "Vercel",
+    "Docker",
+    "Postman",
+    "Figma",
+    "Jira"
+  ]
+}

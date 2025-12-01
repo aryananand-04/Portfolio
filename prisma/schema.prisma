@@ -1,0 +1,55 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("PRISMA_DATABASE_URL")
+  directUrl = env("POSTGRES_URL")
+}
+
+model Metric {
+  id         Int      @id @default(autoincrement())
+  source     String   // 'chess.com', 'github', etc.
+  username   String
+  date       DateTime @default(now())
+  metricType String   @map("metric_type")
+  value      Float
+  rawData    Json?    @map("raw_data")
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  @@unique([source, username, metricType, date])
+  @@index([source, date(sort: Desc)])
+  @@index([metricType, date(sort: Desc)])
+  @@map("metrics")
+}
+
+model Project {
+  id          Int       @id @default(autoincrement())
+  name        String
+  description String?
+  githubUrl   String?   @unique @map("github_url")
+  homepageUrl String?   @map("homepage_url")
+  stars       Int       @default(0)
+  forks       Int       @default(0)
+  language    String?
+  topics      String[]
+  isFeatured  Boolean   @default(false) @map("is_featured")
+  lastUpdated DateTime? @map("last_updated")
+  rawData     Json?     @map("raw_data")
+  createdAt   DateTime  @default(now()) @map("created_at")
+
+  @@index([isFeatured])
+  @@map("projects")
+}
+
+model FailedSync {
+  id           Int      @id @default(autoincrement())
+  source       String
+  errorMessage String   @map("error_message")
+  errorData    Json?    @map("error_data")
+  attemptedAt  DateTime @default(now()) @map("attempted_at")
+
+  @@index([source, attemptedAt(sort: Desc)])
+  @@map("failed_syncs")
+}

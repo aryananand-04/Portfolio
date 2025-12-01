@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Heritage Document Recommendation System",
+    "description": "An intelligent recommendation system for heritage documents using Knowledge Graphs, autoencoders, and advanced ranking algorithms. Collects data from Wikipedia, UNESCO, Indian Heritage databases, and Archive.org to provide semantic-based recommendations through SimRank, Horn's Index, and Firework Algorithm optimization.",
+    "techStack": ["Python", "TensorFlow", "NetworkX", "NLTK", "Streamlit", "Google KG API"],
+    "githubUrl": "https://github.com/aryananand-04/heritage_doc_recomm",
+    "liveUrl": null,
+    "imageUrl": "/projects/heritage-recommender.png"
+  },
+  {
+    "id": 2,
+    "title": "TaskGenie",
+    "description": "An AI-powered assistant that helps interns and developers transform vague task descriptions into clear, actionable requirements with contextual details and suggestions.",
+    "techStack": ["Next.js", "TypeScript", "AI/NLP", "Tailwind CSS"],
+    "githubUrl": "https://github.com/aryananand-04/TaskGenie",
+    "liveUrl": null,
+    "imageUrl": "/projects/taskgenie.png"
+  },
+  {
+    "id": 3,
+    "title": "ClashVision",
+    "description": "A competitive gaming analytics platform providing real-time insights and performance tracking for players. Features interactive dashboards and data visualization.",
+    "techStack": ["TypeScript", "React", "Next.js", "Tailwind CSS"],
+    "githubUrl": "https://github.com/aryananand-04/ClashVision",
+    "liveUrl": null,
+    "imageUrl": "/projects/clashvision.png"
+  },
+  {
+    "id": 4,
+    "title": "Portfolio Website",
+    "description": "A modern, responsive portfolio website built with Next.js 15 showcasing projects, skills, and professional journey. Features clean design, smooth animations, and optimized performance.",
+    "techStack": ["Next.js", "TypeScript", "Tailwind CSS", "React"],
+    "githubUrl": "https://github.com/aryananand-04/Portfolio",
+    "liveUrl": null,
+    "imageUrl": "/projects/portfolio.png"
+  }
+]
