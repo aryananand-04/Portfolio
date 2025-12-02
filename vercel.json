@@ -2,7 +2,15 @@
   "crons": [
     {
       "path": "/api/sync/chess",
-      "schedule": "0 0 * * *"
+      "schedule": "0 2 * * *"
+    },
+    {
+      "path": "/api/sync/lichess",
+      "schedule": "5 2 * * *"
+    },
+    {
+      "path": "/api/sync/github",
+      "schedule": "0 3 * * *"
     }
   ]
 }

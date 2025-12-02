@@ -1,0 +1,41 @@
+{
+  "coc": {
+    "playerTag": "#P9JYRQLV0",
+    "playerName": "Aryan Anand",
+    "highestLeague": "Legend League",
+    "verifyLink": "https://link.clashofclans.com/en?action=OpenPlayerProfile&tag=P9JYRQLV0",
+    "achievements": [
+      "Global Rank #523",
+      "India Rank #5",
+      "Team #97 in CoC World Championship",
+      "Top 0.00048% Globally"
+    ],
+    "screenshots": [
+      "/assets/achievements/coc-1.jpg",
+      "/assets/achievements/coc-2.jpg"
+    ]
+  },
+  "cr": {
+    "playerTag": "#2CQLVYRQ8",
+    "highestLeague": "Royal Champion",
+    "verifyLink": "https://link.clashroyale.com/invite/friend/en?tag=2CQLVYRQ8&token=483b8wjk&platform=iOS",
+    "achievements": [
+      "15000/15000 Trophies",
+      "Top 0.5% Globally",
+      "Multiple Tournament Wins"
+    ],
+    "screenshots": [
+      "/assets/achievements/cr-1.jpg"
+    ]
+  },
+  "pubg": {
+    "playerId": "5221655455",
+    "highestTier": "Conqueror",
+    "achievements": [
+      "Rank #1901"
+    ],
+    "screenshots": [
+      "/assets/achievements/pubg-1.jpg"
+    ]
+  }
+}
