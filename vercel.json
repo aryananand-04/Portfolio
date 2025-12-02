@@ -5,7 +5,7 @@
       "schedule": "0 2 * * *"
     },
     {
-      "path": "/api/sync/github",
+      "path": "/api/sync/lichess",
       "schedule": "0 3 * * *"
     }
   ]

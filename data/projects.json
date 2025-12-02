@@ -1,38 +1,102 @@
-[
-  {
-    "id": 1,
-    "title": "Heritage Document Recommendation System",
-    "description": "An intelligent recommendation system for heritage documents using Knowledge Graphs, autoencoders, and advanced ranking algorithms. Collects data from Wikipedia, UNESCO, Indian Heritage databases, and Archive.org to provide semantic-based recommendations through SimRank, Horn's Index, and Firework Algorithm optimization.",
-    "techStack": ["Python", "TensorFlow", "NetworkX", "NLTK", "Streamlit", "Google KG API"],
-    "githubUrl": "https://github.com/aryananand-04/heritage_doc_recomm",
-    "liveUrl": null,
-    "imageUrl": "/projects/heritage-recommender.png"
-  },
-  {
-    "id": 2,
-    "title": "TaskGenie",
-    "description": "An AI-powered assistant that helps interns and developers transform vague task descriptions into clear, actionable requirements with contextual details and suggestions.",
-    "techStack": ["Next.js", "TypeScript", "AI/NLP", "Tailwind CSS"],
-    "githubUrl": "https://github.com/aryananand-04/TaskGenie",
-    "liveUrl": null,
-    "imageUrl": "/projects/taskgenie.png"
-  },
-  {
-    "id": 3,
-    "title": "ClashVision",
-    "description": "A competitive gaming analytics platform providing real-time insights and performance tracking for players. Features interactive dashboards and data visualization.",
-    "techStack": ["TypeScript", "React", "Next.js", "Tailwind CSS"],
-    "githubUrl": "https://github.com/aryananand-04/ClashVision",
-    "liveUrl": null,
-    "imageUrl": "/projects/clashvision.png"
-  },
-  {
-    "id": 4,
-    "title": "Portfolio Website",
-    "description": "A modern, responsive portfolio website built with Next.js 15 showcasing projects, skills, and professional journey. Features clean design, smooth animations, and optimized performance.",
-    "techStack": ["Next.js", "TypeScript", "Tailwind CSS", "React"],
-    "githubUrl": "https://github.com/aryananand-04/Portfolio",
-    "liveUrl": null,
-    "imageUrl": "/projects/portfolio.png"
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "TaskGenie",
+      "description": "A comprehensive task management application built with TypeScript for organizing and tracking daily tasks efficiently",
+      "techStack": [
+        "TypeScript",
+        "React",
+        "Node.js",
+        "MongoDB"
+      ],
+      "category": "Web Application",
+      "githubUrl": "https://github.com/aryananand-04/TaskGenie",
+      "liveUrl": null,
+      "imageUrl": null,
+      "features": [
+        "Task creation and management",
+        "List organization",
+        "Progress tracking",
+        "User authentication"
+      ],
+      "status": "completed",
+      "year": 2024
+    },
+    {
+      "id": 2,
+      "title": "Heritage Doc Recomm",
+      "description": "Heritage Documentation Recommendation System - An intelligent system for recommending heritage-related documents using machine learning",
+      "techStack": [
+        "Python",
+        "Machine Learning",
+        "Natural Language Processing",
+        "Flask"
+      ],
+      "category": "AI/ML",
+      "githubUrl": "https://github.com/aryananand-04/heritage_doc_recomm",
+      "liveUrl": null,
+      "imageUrl": null,
+      "features": [
+        "Document recommendation engine",
+        "Heritage data processing",
+        "Content-based filtering",
+        "Search functionality"
+      ],
+      "status": "completed",
+      "year": 2024
+    },
+    {
+      "id": 3,
+      "title": "ClashVision",
+      "description": "A computer vision and analytics platform built with TypeScript for real-time data analysis and visualization",
+      "techStack": [
+        "TypeScript",
+        "React",
+        "Computer Vision",
+        "WebGL"
+      ],
+      "category": "Computer Vision",
+      "githubUrl": "https://github.com/aryananand-04/ClashVision",
+      "liveUrl": null,
+      "imageUrl": null,
+      "features": [
+        "Real-time vision processing",
+        "Interactive dashboard",
+        "Data analytics",
+        "Visual insights"
+      ],
+      "status": "completed",
+      "year": 2024
+    },
+    {
+      "id": 4,
+      "title": "Lila Chess Contribution",
+      "description": "Contributions to Lila - the open-source chess server powering Lichess.org, written in Scala",
+      "techStack": [
+        "Scala",
+        "Play Framework",
+        "MongoDB",
+        "Redis"
+      ],
+      "category": "Open Source",
+      "githubUrl": "https://github.com/aryananand-04/lila",
+      "liveUrl": null,
+      "imageUrl": null,
+      "features": [
+        "Chess server infrastructure",
+        "Real-time game management",
+        "Tournament systems",
+        "Community features"
+      ],
+      "status": "ongoing",
+      "year": 2024,
+      "note": "Fork and contribution to lichess.org"
+    }
+  ],
+  "metadata": {
+    "total_projects": 4,
+    "last_updated": "2024-12-03",
+    "version": "1.0.0"
   }
-]
+}
