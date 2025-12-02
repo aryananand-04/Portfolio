@@ -61,7 +61,7 @@ export async function POST() {
     const metrics = [];
 
     // Cast data to JSON-compatible type for Prisma
-    const jsonData = data as Prisma.InputJsonValue;
+    const jsonData = data as unknown as Prisma.InputJsonValue;
 
     // Store each rating as separate metric for this day
     if (blitzRating) {
