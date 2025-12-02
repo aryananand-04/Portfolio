@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
+import { Prisma } from '@prisma/client';
 
 interface GitHubRepo {
   id: number;
@@ -96,7 +97,7 @@ export async function GET() {
         language: repo.language,
         topics: repo.topics,
         lastUpdated: new Date(repo.updated_at),
-        rawData: repo,
+        rawData: repo as unknown as Prisma.InputJsonValue,
       };
 
       if (existingProject) {
