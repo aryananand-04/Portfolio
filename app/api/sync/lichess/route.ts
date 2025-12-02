@@ -2,46 +2,56 @@ import { NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { Prisma } from '@prisma/client';
 
-interface ChessComStats {
-  chess_blitz?: { last?: { rating: number } };
-  chess_rapid?: { last?: { rating: number } };
-  chess_bullet?: { last?: { rating: number } };
-  tactics?: { highest?: { rating: number } };
+interface LichessPerf {
+  rating: number;
+  games: number;
+  rd: number;
+  prog: number;
+  prov?: boolean;
+}
+
+interface LichessUser {
+  perfs: {
+    bullet?: LichessPerf;
+    blitz?: LichessPerf;
+    rapid?: LichessPerf;
+    puzzle?: LichessPerf;
+  };
 }
 
 export async function POST() {
   try {
-    const username = process.env.CHESS_USERNAME;
+    const username = process.env.NEXT_PUBLIC_LICHESS_USERNAME;
 
     if (!username) {
       return NextResponse.json(
-        { error: 'CHESS_USERNAME not configured' },
+        { error: 'NEXT_PUBLIC_LICHESS_USERNAME not configured' },
         { status: 500 }
       );
     }
 
-    // Fetch Chess.com stats with 10s timeout
+    // Fetch Lichess user stats with 10s timeout
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 10000);
 
     const response = await fetch(
-      `https://api.chess.com/pub/player/${username}/stats`,
+      `https://lichess.org/api/user/${username}`,
       { signal: controller.signal }
     );
 
     clearTimeout(timeout);
 
     if (!response.ok) {
-      throw new Error(`Chess.com API returned ${response.status}`);
+      throw new Error(`Lichess API returned ${response.status}`);
     }
 
-    const data: ChessComStats = await response.json();
+    const data: LichessUser = await response.json();
 
     // Extract ratings
-    const blitzRating = data.chess_blitz?.last?.rating;
-    const rapidRating = data.chess_rapid?.last?.rating;
-    const bulletRating = data.chess_bullet?.last?.rating;
-    const puzzleRating = data.tactics?.highest?.rating;
+    const blitzRating = data.perfs?.blitz?.rating;
+    const rapidRating = data.perfs?.rapid?.rating;
+    const bulletRating = data.perfs?.bullet?.rating;
+    const puzzleRating = data.perfs?.puzzle?.rating;
 
     // We store one row per calendar day in the database.
     // Truncate the timestamp to the start of "today" so multiple syncs today
@@ -56,7 +66,7 @@ export async function POST() {
     // Store each rating as separate metric for this day
     if (blitzRating) {
       metrics.push({
-        source: 'chess.com',
+        source: 'lichess',
         username,
         date: today,
         metricType: 'blitz_rating',
@@ -67,7 +77,7 @@ export async function POST() {
 
     if (rapidRating) {
       metrics.push({
-        source: 'chess.com',
+        source: 'lichess',
         username,
         date: today,
         metricType: 'rapid_rating',
@@ -78,7 +88,7 @@ export async function POST() {
 
     if (bulletRating) {
       metrics.push({
-        source: 'chess.com',
+        source: 'lichess',
         username,
         date: today,
         metricType: 'bullet_rating',
@@ -89,7 +99,7 @@ export async function POST() {
 
     if (puzzleRating) {
       metrics.push({
-        source: 'chess.com',
+        source: 'lichess',
         username,
         date: today,
         metricType: 'puzzle_rating',
@@ -132,7 +142,7 @@ export async function POST() {
     // Log failure to database
     await prisma.failedSync.create({
       data: {
-        source: 'chess.com',
+        source: 'lichess',
         errorMessage: error.message || 'Unknown error',
         errorData: {
           error: error.toString(),
